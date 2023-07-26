@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+  
+}
+
+.contenedor-inicio {
+  transition: .5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4fb4b4;
+  width: 40rem;
+  height: 60rem;
+  border-radius: 2rem;
+  
+
+}
+
+.logo-apicacion {
+  width: 10rem;
+  height: 10rem;
+  position: relative;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(62, 120, 228);
+  border-radius: 2.5rem;
+  box-shadow: inset;
+}
+.logo-apicacion::after{
+ 
+  transition: .3s ease-in-out all;
+  transform-origin: center;
+  
+}
+.logo-apicacion::after{
+  transform: scale(200);
+  background: #cc1010;
+}
+.logo-apicacion:hover{
+  background: #098d96;
+}
+.notas{
+  width: 5rem;
+  height: 5rem;
+}

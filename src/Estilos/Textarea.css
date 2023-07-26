@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+.bloc-de-ntoas{
+  
+  
+  background-color: #2f4469; 
+  min-width: 35rem;
+  max-width: 35rem;
+  height: 5rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  
+}
+.contenedor-text-anuncio{
+  background-color: #6092e7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.contenedor-textarea {
+  background-color: #fdf4c9;
+  min-width: 35rem;
+  max-width: 35rem;
+  min-height: 45rem;
+  max-height: 45rem;
+  margin-top: 0rem;
+  box-shadow: #dfdfdf;
+  border: 0;
+  outline-style: none;
+}
+.input{
+  min-width: 35rem;
+  max-width: 35rem;
+  height: 3rem;
+  margin-top: 0rem;
+  outline-style: none;
+  border: 0;
+  padding-left: 1rem;
+  font-size: 1rem;
+}
+.contenedor{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #283345;
+  width: 40rem;
+  height: 60rem;
+  border-radius: 2rem;
+  opacity: initial;
+}
+.boton-guardar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin-top: 2rem;
+  margin-left: 31rem;
+  background-color:#2f4469;
+  cursor: pointer;
+  outline-style: none;
+  border: none;
+  
+  
+  
+  
+}
+.icono-guardar{
+  position: absolute;
+  width: 1.8rem;
+  height: 1.8rem;
+  
+  margin-top: 1rem;
+  cursor: pointer;
+  color: #999898;
+}
+.icono-guardar:hover{
+  
+  color: #6092e7;
+}
+.delete{
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  margin-top: 1.65rem;
+  margin-left: 26rem;
+  color: #999898;
+  cursor: pointer;
+  
+}
+.delete:hover{
+  
+  color: #bd6060;
+}
+
+.regresar{
+  
+  width: 2rem;
+  height: 2rem;
+  margin-top: 1.8rem;
+  margin-left: 0.5rem;
+  color: #999898;
+  cursor: pointer;
+}
+.regresar:hover{
+  color: #6092e7;
+  
+}
+.titulo-block{
+ margin-left: 6rem;
+ margin-top: 2.2rem;
+ color: #dfdfdf;
+ font-size: 23px;
+ font-family: sans-serif;
+
+}
+
+@media (max-width:600px) {
+  
+  .contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #283345;
+    width: 20rem;
+    height: 30rem;
+    border-radius: 2rem;
+    opacity: initial;
+  }
+
+  .contenedor-textarea{
+    min-width: 18rem;
+    max-width: 18rem;
+    min-height: 21rem;
+    max-height: 21rem;
+    margin-top: 0rem;
+    
+    
+    box-shadow: #dfdfdf;
+    outline-style: none;
+  }
+  
+  
+  .bloc-de-ntoas{
+    
+     
+    background-color: #2f4469; 
+    min-width: 18rem;
+    max-width: 18rem;
+    height: 3rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    
+  }
+  .input{
+    min-width: 18rem;
+    max-width: 18rem;
+    height: 1.5rem;
+    margin-top: 0rem;
+    outline-style: none;
+    border: 0;
+    padding-left: 1rem;
+    font-size: 0.5rem;
+  }
+  .boton-guardar{
+    position: absolute;
+    margin-top: 1rem;
+    margin-left: 15rem;
+    
+  }
+  .icono-guardar{
+    width: 1rem;
+    height: 1rem;
+    
+    margin-top: 0.5rem;
+    cursor: pointer;
+    color: #999898;
+  }
+  .delete{
+    position: absolute;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-top: 1.3rem;
+    margin-left: 11rem;
+    color: #999898;
+    cursor: pointer;
+  }
+  .regresar{
+  
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    color: #999898;
+    cursor: pointer;
+  }
+  
+}
