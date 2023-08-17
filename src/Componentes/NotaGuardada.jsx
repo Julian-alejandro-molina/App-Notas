@@ -5,7 +5,7 @@ export const NotaGuardada=({EnviarValorAnuncncio,addMensaje})=>{
     const[ocultar ,setOcultar]=useState();
     //console.log(EnviarValorAnuncncio);
     const BotonAceptar=()=>{
-        setOcultar(!EnviarValorAnuncncio)// cambia le el valor del estado ocultar
+        setOcultar(!EnviarValorAnuncncio)// cambia  el valor del estado ocultar
         addMensaje(ocultar);//ejecuata la funcion addMenje  
        
     }

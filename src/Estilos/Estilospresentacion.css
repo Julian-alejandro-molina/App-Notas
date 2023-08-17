@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   background-color: #4fb4b4;
-  width: 40rem;
+  width: 45rem;
   height: 60rem;
   border-radius: 2rem;
   
@@ -46,4 +46,11 @@
 .notas{
   width: 5rem;
   height: 5rem;
+}
+
+@media(max-width:600px){
+  .contenedor-inicio { 
+    width: 20rem;
+    height: 30rem;
+  }
 }

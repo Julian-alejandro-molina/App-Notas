@@ -8,8 +8,8 @@
   
   
   background-color: #2f4469; 
-  min-width: 35rem;
-  max-width: 35rem;
+  min-width: 40rem;
+  max-width: 40rem;
   height: 5rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -24,8 +24,8 @@
 }
 .contenedor-textarea {
   background-color: #fdf4c9;
-  min-width: 35rem;
-  max-width: 35rem;
+  min-width: 40rem;
+  max-width: 40rem;
   min-height: 45rem;
   max-height: 45rem;
   margin-top: 0rem;
@@ -34,8 +34,8 @@
   outline-style: none;
 }
 .input{
-  min-width: 35rem;
-  max-width: 35rem;
+  min-width: 40rem;
+  max-width: 40rem;
   height: 3rem;
   margin-top: 0rem;
   outline-style: none;
@@ -49,10 +49,11 @@
   justify-content: center;
   flex-direction: column;
   background-color: #283345;
-  width: 40rem;
-  height: 60rem;
+  width: 45rem;
+    height: 60rem;
   border-radius: 2rem;
   opacity: initial;
+  margin-top: 1rem;
 }
 .boton-guardar{
   display: flex;
@@ -60,7 +61,7 @@
   justify-content: center;
   position: absolute;
   margin-top: 2rem;
-  margin-left: 31rem;
+  margin-left: 36rem;
   background-color:#2f4469;
   cursor: pointer;
   outline-style: none;

@@ -7,7 +7,11 @@ import { AiFillDelete } from 'react-icons/ai';
 import { Link } from "react-router-dom";
 import { NotaGuardada } from '../Componentes/NotaGuardada'
 
-
+let nota_id;
+let notas;
+let nota;
+let posicion;
+let bandera=false
 var contadorFecha = [];
 let notasGuardadas =  [];
 const datos = {
@@ -21,6 +25,7 @@ export const Textarea = ({ }) => {
   
   const params= useParams();
   const { id } = params;
+  
 
   const [anuncio, setAnuncio] = useState(false);
   //const id=params.id
@@ -46,14 +51,33 @@ export const Textarea = ({ }) => {
   const [searchText, setSearchText] = useState('');
   const [idNotaActualizar, setIdNotaActualizar] = useState('');
 
-
+  
   if(id) {
     useEffect(()=>{
-      const notas = JSON.parse(localStorage.getItem('listNotas'));
-      const nota = notas.find((nota) => nota.id === id);
+       
+      notas = JSON.parse(localStorage.getItem('listNotas'));
+      nota = notas.find((nota) => nota.id === id);//Buscamos el elemento que cumple con la condicion
+      posicion=notas.findIndex(element=> element.id===nota.id);//*obtenemos la posicion del componente a remplazar*/ 
+
       setSearchInput(nota.titulo)
       setSearchText(nota.nota)
       setIdNotaActualizar(nota.id)
+      
+      
+      notas.splice(posicion,1);
+      let listNotaJson = JSON.stringify(notas);
+      localStorage.setItem('listNotas', listNotaJson);
+      
+      bandera=true;
+      console.log(notas);
+      console.log(bandera);
+      console.log(nota.id);
+      
+      
+      
+      
+      
+      
     }, [])
   }
   
@@ -92,9 +116,10 @@ export const Textarea = ({ }) => {
 
   
   const guardar = () => {
-    
+
+  
     obtenerdatos(datos);
-    notasGuardadas = JSON.parse(localStorage.getItem("listNotas"));
+    notasGuardadas = JSON.parse(localStorage.getItem("listNotas") || '[]');
     if (datos.titulo === '') {
       alert('Recuarda que el titulo de tu nota es obligatotio')
       document.getElementById('titulo').focus();
@@ -106,7 +131,8 @@ export const Textarea = ({ }) => {
       document.getElementById('nota').focus();
       return;
 
-    } else { }
+    }
+    
     Limpiarinputs();
     setIdunico(idunico + 1);
     datos.id = idunico.toString();
@@ -145,7 +171,7 @@ export const Textarea = ({ }) => {
         <div className="bloc-de-ntoas">
           <button disabled={habilitar} id='btn' className="boton-guardar" onClick={ejecutar} ><AiFillSave className="icono-guardar"></AiFillSave></button>
           <Link to={'/inicioapp'}><AiOutlineLeft className="regresar"></AiOutlineLeft></Link>
-          <AiFillDelete className='delete'></AiFillDelete>
+          {/* <AiFillDelete className='delete'></AiFillDelete>*/}
         </div>
 
         <input

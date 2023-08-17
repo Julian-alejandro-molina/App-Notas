@@ -1,5 +1,6 @@
 import '../Estilos/Estilosinicioapp.css'
-import { useState,useEffect } from "react";
+import { useState, useEffect, } from "react";
+import{useParams}from 'react-router-dom';
 import { Menu } from "../Componentes/Menu";
 import { BotonAdd } from "../Componentes/BotonAdd";
 
@@ -8,9 +9,17 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { Cardrecientes } from '../Componentes/Cardrecientes'
 import { v4 as uuidv4 } from 'uuid';
 import { json } from 'react-router-dom';
+import { Login } from "../Componentes/Login";
+
+const corchetesuno= "{";
+const corchetesdos="}";
 const valorInicial = false;
 const menuvalorInicial = false;
 export const Inicioapp = ({ }) => {
+
+    const params= useParams();
+    const { usuarios } = params;
+    console.log(usuarios);
 
     const [buscar, setBuscar] = useState();
 
@@ -24,9 +33,7 @@ export const Inicioapp = ({ }) => {
     const mostrarMenu = () => {
         setMenuAdd(!menuAdd);
     };
-    let [notas, setNotas] = useState(JSON.parse(localStorage.getItem('listNotas')) || []);
-    //console.log(notas);
-    //console.log(notas.id);
+    const [notas, setNotas] = useState(JSON.parse(localStorage.getItem('listNotas')) || []);
 
     /*if ( notas === null ) {
         notas = [];
@@ -42,36 +49,14 @@ export const Inicioapp = ({ }) => {
         let listNotaJson = JSON.stringify(listNota);
         localStorage.setItem('listNotas', listNotaJson);
     }
-    
-
-    let tituloNota = []
-    let bandera =false
-    const titulos = notas.map(index => index.titulo);
-    //console.log(titulos);
-    titulos.forEach(element => {
-        if (element === buscar) {
-            tituloNota = element
-            bandera=true;
-
-        }
-    });
-    let resultTitulo = notas.filter(dato => dato.titulo === tituloNota)
-    //console.log(resultTitulo)
-    useEffect(()=>{
-        if (bandera===true) {
-            setNotas(resultTitulo)
-        }else
-            {
-                setNotas(JSON.parse(localStorage.getItem('listNotas')) || []); 
-        }
-
-    },[bandera]);
 
 
+
+    /*------------------BUSCADOR-----------------------*/
     const filtrar = (searchParams) => {
-        if(searchParams) {
+        if (searchParams) {
             const newNotas = notas.filter((nota) => {
-                if(nota.titulo.includes(searchParams)) {
+                if (nota.titulo.toLowerCase().includes(searchParams.toLocaleLowerCase())) {
                     return nota;
                 }
             })
@@ -79,43 +64,49 @@ export const Inicioapp = ({ }) => {
         } else {
             setNotas(JSON.parse(localStorage.getItem('listNotas')) || []);
         }
+
     }
 
 
 
-
     return (
+
         <div className="contenedor-principal">
+            <div className='contenedor-corchetes'>
+                 <h1 className='corchetesuno'>{corchetesuno}</h1>
+                 <h1 className='titulo-nota'>Notas/</h1> <p className='text-usuarios'>{usuarios}</p>
+                 <h1 className='corchetesdos'>{corchetesdos}</h1>
+            </div>
+                {mostrarComponente}
+                <AiFillPlusCircle className="add" onClick={mostrarMenu}></AiFillPlusCircle>
 
-            <AiFillPlusCircle className="add" onClick={mostrarMenu}></AiFillPlusCircle>
+                <a className="boton" onClick={verificarSeguir}>
+                    <AiOutlineMenu className="icono-menu"></AiOutlineMenu>
+                </a>
 
-            <a className="boton" onClick={verificarSeguir}>
-                <AiOutlineMenu className="icono-munu"></AiOutlineMenu>
-            </a>
+                <input className="buscador" type="text" onChange={ev => filtrar(ev.target.value)} placeholder="Buscar" />
 
-            <input className="buscador" type="text" onChange={ev => filtrar(ev.target.value)} placeholder="Buscar" />
+                {mostrarmenuAdd}
+                <div className='contenedor-p'>
+                {notas.map((elementoNota) => {
 
-            {mostrarComponente}
-            {mostrarmenuAdd}
-            {notas.map((elementoNota,) => {
+                    return (<Cardrecientes
 
-                return <Cardrecientes
+                        key={uuidv4()}
+                        titulo={elementoNota.titulo}
+                        nota={elementoNota.nota}
+                        fecha={elementoNota.fecha}
+                        id={elementoNota.id}
+                        addMensaje={addMensaje}
+                    />)
 
-                    key={uuidv4()}
-                    titulo={elementoNota.titulo}
-                    nota={elementoNota.nota}
-                    fecha={elementoNota.fecha}
-                    id={elementoNota.id}
-                    addMensaje={addMensaje}
-                />
-
-            })}
+                })}
 
 
 
 
 
-
+            </div>
         </div>
 
     );

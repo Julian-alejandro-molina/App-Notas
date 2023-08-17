@@ -9,207 +9,80 @@
 }
 
 .dropdown{
-    width: 20rem;
-    height: 40rem;
-    background-color: rgb(230, 229, 229);
-    position: absolute;
-    margin-top: 1rem;
-    margin-left: 2rem;
-    border-radius: 2rem;
-    
-    transition:  .5s;
-}
-.dropdown.opacity{
-    opacity: .0;
-    
-}
-.menu{
-    color: rgb(202, 203, 204);
-    
-    width: 4rem;
-    height: 4rem;
-    position: absolute;
-    
-    margin-left: 2.3rem;
-    cursor: pointer;
-    border: none;
-    
-   
-}
-.menu-icono{
-    position: absolute;
-    width: 3rem;
-    height: 3rem;
-    margin-top: 0.5rem;
-    margin-left: 0.1rem;
-    border: none;
-    
-    
-}
-.tx{
-    margin-left: 8rem;
-    font-size: 10rem;
-    color: aqua;
-}
-.icono-munu{
-    position: absolute;
-    width: 3.5rem;
-    height: 3.5rem;
-    color: rgb(136, 137, 138);
-    cursor: pointer;   
-}
-.icono-munu:hover{
-    color: #3B7FB8;
-}
-.contenedor-imagen-perfil{
+    padding-right: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color:#1f2735;
-    width: 100px;
-    height:100px;
+    width: 40rem;
+    height: 3rem;
+    background-color: rgb(85, 80, 80);
+    position: absolute;
+    margin-top: 2.5rem;
     margin-left: 2rem;
-    margin-top: 2rem;
-    border-radius: 50px;
-
+    border-radius: 10px;
+    overflow: hidden;
+    transition:  .5s;
 }
-.sofia{
-    width: 95px;
-    height: 95px;
-    border-radius: 50px;
-    object-fit: cover;
+.inicio-secion{
+    border-radius: 0.5rem;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    text-transform: uppercase;
+    
+    width: 5rem;
+    height: 2.5rem;
+    margin-left: 35rem;
+    background-color: rgb(214, 172, 33);
+    color: #704c1c;
+    cursor: pointer;
+    outline-style: none;
+    border: 0;
+    
+    
+    
     
 }
-.nombre-sofia{
-    position: absolute;
-    font-size: 1rem;
-    margin-left: 9rem;
-    margin-top: 5rem;
-    color: #818181;
-
+.inicio-secion:hover{
+  color: #916225;
 }
-.lista-menu{
-    margin-left: 2rem;
+.img-login{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+@media(max-width:600px){
+  .dropdown{
+    width: 18rem;
+    height: 2rem;
+    background-color: rgb(85, 80, 80);
+    position: absolute;
     margin-top: 2rem;
     margin-left: 1rem;
     
-}
-.contenedor-intem-list{
- margin: 1rem;
- cursor: pointer;
- font: 1em sans-serif;
- color: #818181;
- height: 2rem;
- border-radius: 0.5rem;
- display: flex;
- align-items: center;
- padding: 5px;
-}
-.contenedor-intem-list:hover{
-  background-color: aliceblue;
-}
-.iten-list{
-    list-style: none;
-    margin-left: 1.5rem;
-}
-.icono-lista{
+  }
+  .inicio-secion{
+    border-radius: 0.5rem;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    text-transform: uppercase;
+    
+    width: 3.5rem;
+    height: 2rem;
+    margin-left: 15rem;
+    background-color: rgb(214, 172, 33);
+    color: #704c1c;
+    cursor: pointer;
+    outline-style: none;
+    border: 0;
+  }
+  .img-login{
     width: 1rem;
     height: 1rem;
-}
-hr{
-    height: 1px;
-    width: 17rem;
-    margin-left: 2rem;
-    background-color: #1f2735;
-    border: 0;
-}
-.recientes{
-    font-size: 1rem;
-    text-transform: uppercase;
-    margin-left: 2rem;
-    margin-top: 1rem;
-}
-.contenedor-recientes{
-    background-color: #1f2735;
-    margin-left: 2rem;
-    margin-top: 1rem;
-    width: 16rem;
-    height: 13rem;
-    border-radius: 1rem;
-
-}
-
-@media (max-width:600px) {
-    .icono-munu{
-        position: absolute;
-        width: 1.5rem;
-        height: 1.5rem;
-        
-    }
-    #contenedor-dropdown{
-        width: 10rem;
-        height: 20rem;
-        margin-left: 1rem;
-       
-    }
-    .contenedor-imagen-perfil{
-        width: 50px;
-        height: 50px;
-        margin-left: 1rem;
-    }
-    .sofia{
-      width: 49px;
-      height: 49px;
-      object-fit: cover;
-      
-    }
-    .nombre-sofia{
-        position: absolute;
-        font-size: 9px;
-        margin-left: 5rem;
-        margin-top: 3.5rem;
-        
-    
-    }
-    .lista-menu{
-        width:8rem;
-        margin-top: 1rem;
-        margin-left: 0.5rem;
-    }
-    .contenedor-intem-list{
-        margin: 0.3rem;
-        cursor: pointer;
-        color: #818181;
-        height: 1rem;
-        border-radius: 0.5rem;
-        display: flex;
-        align-items: center;
-        padding: 5px;
-       }
-    .iten-list{
-        list-style: none;
-        margin-left: 1rem;
-        font-size: 8px;
-    }
-    hr{
-        width: 9rem;
-        margin-left:0.5rem ;
-    }
-    .recientes{
-        font-size: 0.5rem;
-        text-transform: uppercase;
-        margin-left: 0.5rem;
-        margin-top: 1rem;
-    }
-    .contenedor-recientes{
-        background-color: #1f2735;
-        margin-left: 0.5rem;
-        margin-top: 0.5rem;
-        width: 9rem;
-        height: 6rem;
-        border-radius: 1rem;
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
-    
-    }
+  }
 }
